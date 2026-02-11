@@ -1,0 +1,20 @@
+[project]
+name = "dhruvprep"
+version = "0.1.0"
+description = "A lightweight data preprocessing toolkit for machine learning workflows."
+readme = "README.md"
+authors = [
+  { name="Dhruv Pahwa", email="your-email@example.com" }
+]
+license = { text = "MIT" }
+dependencies = [
+  "pandas",
+  "numpy",
+  "scikit-learn",
+  "statsmodels"
+]
+requires-python = ">=3.8"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
