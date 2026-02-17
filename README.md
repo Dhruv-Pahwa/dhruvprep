@@ -1,10 +1,7 @@
-# DhruvPrep 
-*A Lightweight Data Preprocessing Toolkit for Machine Learning*
+# DhruvPrep
+> A Lightweight Data Preprocessing Toolkit for Machine Learning
 
-DhruvPrep is a modular Python library designed to simplify 
-data preprocessing for structured machine learning workflows.
-
-It provides reusable utilities for:
+DhruvPrep is a modular Python library designed to simplify data preprocessing for structured machine learning workflows. It provides reusable utilities for:
 
 - Handling missing values
 - Detecting multicollinearity (VIF & correlation)
@@ -17,10 +14,16 @@ DhruvPrep helps standardize and automate repetitive preprocessing steps, making 
 
 ---
 
-## 🧪 Example: How to Use DhruvPrep
+## 📦 Installation
+```bash
+pip install dhruvprep
+```
 
-### 🔹 Full Feature Demonstration
+---
 
+## 🧪 Usage
+
+### Import
 ```python
 from dhruvprep import (
     handle_missing,
@@ -33,41 +36,45 @@ from dhruvprep import (
     minmax_scale,
     basic_summary
 )
+```
 
-# Handle missing values
+### Missing Values
+```python
 df = handle_missing(df, strategy="mean")
+```
 
-# Remove outliers
+### Outlier Removal
+```python
 df = remove_outliers_iqr(df)
+```
 
-# VIF calculation
+### Multicollinearity Detection
+```python
+# VIF
 vif = calculate_vif(df.select_dtypes(include=["int64", "float64"]))
 print(vif)
 
-# High correlation detection
+# High correlation
 high_corr_cols = high_correlation(df, threshold=0.9)
 print("Highly correlated columns:", high_corr_cols)
+```
 
-# Encoding
+### Encoding
+```python
 df = label_encode(df, columns=["Gender"])
 df = one_hot_encode(df, columns=["City"])
+```
 
-# Scaling
+### Scaling
+```python
 df = standard_scale(df, columns=["Age", "Salary"])
 df = minmax_scale(df, columns=["Age", "Salary"])
+```
 
-# Basic EDA Summary
+### EDA Summary
+```python
 summary = basic_summary(df)
-
 print(summary["shape"])
 print(summary["missing_values"])
 print(summary["describe"])
-
----
-
-## 📦 Installation
-
-### Install from PyPI
-
-```bash
-pip install dhruvprep
+```
